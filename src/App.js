@@ -1,10 +1,16 @@
-import logo from './logo.svg';
-import Popup from './components/Popup'
+import Popup from './components/Popup';
+import WorkExperience from './components/WorkExperience';
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
-    <Popup />
+    <Router>
+      <Switch>
+        <Route exact path='/' component={Popup} />
+        <Route path="/job/:jobId" component={WorkExperience} />
+      </Switch>
+    </Router>
   )
 }
 
